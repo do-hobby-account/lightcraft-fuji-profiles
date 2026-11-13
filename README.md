@@ -23,11 +23,23 @@ Consequences:
 - LightCraft renders photos with a LUT profile on the CPU.
 - The Amount slider (0-200 %) works as with the built-in looks.
 
-## Building the profiles
+## Download
+
+The 15 ready-made profiles are in the [`Fujifilm Camera Matching`](Fujifilm%20Camera%20Matching) folder. Download
+the repository (Code → Download ZIP) and import that folder as described under *Installing in LightCraft*.
+
+## Where the colour comes from
 
 The colour data comes from Stuart Sowerby's
 [Fuji Film Simulation Profiles](https://blog.sowerby.me/fuji-film-simulation-profiles/), which he measured from
-Fujifilm's own RAW FILE CONVERTER. This repository holds the conversion script, not his tables.
+Fujifilm's own RAW FILE CONVERTER. The `.cube` files here are derived from his tables. He publishes them free of
+charge but states no licence, and we found no way to contact him, so they are shared here with credit and without
+his explicit permission. **Stuart, if you would like them changed or removed, please open an issue and they will
+be.** The MIT licence in this repository covers only the conversion script and documentation.
+
+## Building the profiles yourself
+
+You only need this to reproduce or change the conversion.
 
 1. Download `Fujifilm-XTrans-III.zip` (HaldCLUT, sRGB) from the page above and unzip it.
 2. Install Python 3 and Pillow (`pip install pillow`).

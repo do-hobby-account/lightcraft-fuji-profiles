@@ -21,5 +21,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
 This licence covers the conversion script and documentation in this repository.
-It does not cover the film-simulation tables the script reads, which are the
-work of Stuart Sowerby (https://blog.sowerby.me/fuji-film-simulation-profiles/).
+It does not cover the .cube files in "Fujifilm Camera Matching" or the
+film-simulation tables they are derived from, which are the work of
+Stuart Sowerby (https://blog.sowerby.me/fuji-film-simulation-profiles/) and
+carry no stated licence.

@@ -1,7 +1,5 @@
-# Built profiles and the downloaded source tables are not redistributed here
-*.cube
+# The downloaded source tables are not kept here
 *.png
 *.zip
-Fujifilm Camera Matching/
 Fujifilm XTrans III/
 __pycache__/
