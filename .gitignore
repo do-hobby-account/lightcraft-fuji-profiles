@@ -3,3 +3,4 @@
 *.zip
 Fujifilm XTrans III/
 __pycache__/
+.venv/

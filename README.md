@@ -83,3 +83,30 @@ region is kept a function of brightness.
 - Film-simulation measurements: Stuart Sowerby, <https://blog.sowerby.me/fuji-film-simulation-profiles/>.
 - FUJIFILM, PROVIA, Velvia, ASTIA, CLASSIC CHROME and ACROS are trademarks of FUJIFILM Corporation. This project
   is not affiliated with or endorsed by FUJIFILM, Adobe or the LightCraft developers.
+
+## Focus stacking (macro)
+
+LightCraft merges HDR brackets and panoramas but has no focus stacking. The [`focus-stack`](focus-stack) folder
+holds a small tool for it: it develops each raw of a stack with `lightcraft-cli`, aligns the frames (moving focus
+changes the magnification slightly), keeps the sharpest detail from each (Laplacian-pyramid fusion) and writes
+`<first frame>-Stack.tif` (16-bit sRGB) next to the first frame. It never replaces an existing file.
+
+Setup, once, in the `focus-stack` folder (Windows, Python 3):
+
+```
+python -m venv .venv
+.venv\Scripts\pip install numpy opencv-python-headless
+```
+
+Then drag the frames of one stack, or a folder holding only them, onto `Focus Stack.bat`. From a terminal:
+
+```
+.venv\Scripts\python focus_stack.py FRAMES_OR_FOLDER... [-o OUT.tif] [--size N] [--settings FILE] [--preset ID]
+```
+
+`--settings` / `--preset` apply the same LightCraft look to every frame; `--size 1500` makes a quick test. If
+`lightcraft-cli` is not in `C:\Program Files\ArtCraft\LightCraft`, set `LIGHTCRAFT_CLI` to its path.
+
+Limits: the subject must hold still; the TIFF carries no camera metadata; import it into LightCraft yourself
+(synchronise the folder). It was checked on a synthetic stack with a known answer and for running end to end on
+X-T2 raws, not yet on a real focus stack.
